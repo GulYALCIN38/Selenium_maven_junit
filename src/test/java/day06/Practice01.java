@@ -115,7 +115,7 @@ public class Practice01 {
         Thread.sleep(2000);
        //15. 'Devam Et' düğmesini tıklayın
         driver.findElement(By.xpath("//a[@data-qa='continue-button']")).click();
-//16. "Kullanıcı adı olarak oturum açıldı" ifadesinin görünür olduğunu doğrulayın
+//16. "Kullanıcı adı olarak oturum açıldı" ifadesinin görünür olduğunu doğrulayın  om
        // driver.navigate().back();
         //driver.findElement(By.xpath("//*[text()=['Congratulations! Your new account has been successfully created!']")).isDisplayed();
 //17. 'Hesabı Sil' düğmesini tıklayın
