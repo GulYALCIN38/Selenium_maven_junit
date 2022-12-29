@@ -11,12 +11,12 @@ import java.time.Duration;
 
 public class C05_Practice {
     //BeforeClass ile driver ı olusturun ve
-//Maximize edin, 15 sn bekletin
-//http://www.google.com adresine gidin
-//arama kutusuna "The God Father" yazip, cikan sonuc sayisini yazdirin
-//arama kutusuna  "Lord of the Rings" yazip, cikan sonuc sayisini yazdirin
-//arama kutusuna  "Kill Bill" yazip, cikan sonuc sayisini yazdirin
-//AfterClass ile kapatın
+    //Maximize edin, 15 sn bekletin
+    //http://www.google.com adresine gidin
+    //arama kutusuna "The God Father" yazip, cikan sonuc sayisini yazdirin
+    //arama kutusuna  "Lord of the Rings" yazip, cikan sonuc sayisini yazdirin
+    //arama kutusuna  "Kill Bill" yazip, cikan sonuc sayisini yazdirin
+    //AfterClass ile kapatın
     static WebDriver driver;
 
     @BeforeClass
@@ -32,8 +32,10 @@ public class C05_Practice {
     @Before
     public void setUp() throws InterruptedException {
 
+
         driver.get("http://www.google.com");
         driver.findElement(By.xpath("//*[text()='Tout accepter']")).click();
+
 
     }
 
@@ -46,11 +48,13 @@ public class C05_Practice {
 
     @Test
     public void test02() {
+
         driver.findElement(By.cssSelector("input[class='gLFyf']")).sendKeys("Lord of the Rings", Keys.ENTER);
     }
 
     @Test
     public void test03() {
+
         driver.findElement(By.cssSelector("input[class='gLFyf']")).sendKeys("Kill Bill", Keys.ENTER);
 
     }
@@ -59,14 +63,14 @@ public class C05_Practice {
     public void tearDown() {
         String[] s = driver.findElement(By.id("result-stats")).getText().split(" ");
         System.out.println("sonuc=" + s[1]);
-        driver.quit();
+        driver.close();
 
 
     }
 
     @AfterClass
     public static void afterClass() {
-
+        driver.quit();
 
     }
 }
