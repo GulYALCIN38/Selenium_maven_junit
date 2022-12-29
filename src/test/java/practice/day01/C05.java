@@ -43,7 +43,8 @@ public class C05 {
 
         // 2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
 
-        select.selectByValue("2");
+        //select.selectByValue("2");
+
         System.out.println(select.getFirstSelectedOption().getText());
 
 

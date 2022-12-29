@@ -45,6 +45,9 @@ public class C02_Dropdownreusable {
     @Test
     public void selectfromdropdovn() {
         selectfromDropDown(driver.findElement(By.xpath("//select[@id='year']")),"2007");
+         selectfromDropDown(driver.findElement(By.xpath("//*[@id='month']")),"January");
+        selectfromDropDown(driver.findElement(By.id("day")),"12");
+        selectfromDropDown(driver.findElement(By.id("state")),"Texas");
     }
 
  /*   public void goster(WebElement a,String b){
@@ -53,4 +56,5 @@ public class C02_Dropdownreusable {
         List<WebElement>y=webs.stream().filter(t->t.getText().equals(b)).collect(Collectors.toList());
         y.get(0).click();
     }*/
+
 }
