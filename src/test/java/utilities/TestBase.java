@@ -33,4 +33,15 @@ public abstract class TestBase {
         driver.quit();
 
     }
+    //    MULTIPLE WINDOW
+    public static void switchToWindow(String targetTitle) {//targettitle gecis yapmak istedigim sayfanin title si
+        String origin = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            if (driver.getTitle().equals(targetTitle)) {
+                return;//loop tan disari cik
+            }
+        }
+        driver.switchTo().window(origin);
+    }
 }

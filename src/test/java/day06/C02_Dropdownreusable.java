@@ -56,5 +56,14 @@ public class C02_Dropdownreusable {
         List<WebElement>y=webs.stream().filter(t->t.getText().equals(b)).collect(Collectors.toList());
         y.get(0).click();
     }*/
+    public static void isEquals(WebElement driver,String s){
+
+        if(driver.getText().equals(s)){
+            System.out.println("test PASSED");
+        }else {
+            System.out.println("test FAILED");
+        }
+
+    }
 
 }

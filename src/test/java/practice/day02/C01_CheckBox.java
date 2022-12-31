@@ -54,7 +54,8 @@ public class C01_CheckBox {
         // checkbox elementlerini locate edin
         // checkbox1 ve checkbox3  secili degil ise secin
         // checkbox1 ve checkbox3 elementlerinin secili oldugunu Test edin
-        // checkbox2 elementinin secili olmadıgını test edi
+        // checkbox2 elementinin secili olmadıgını test edin
+
     }
 }
 
