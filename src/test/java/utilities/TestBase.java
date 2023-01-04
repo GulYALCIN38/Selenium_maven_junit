@@ -30,7 +30,7 @@ public abstract class TestBase {
     //teardown
     @After
     public void tearDown() {
-       // driver.quit();
+       driver.quit();
 
     }
     //    MULTIPLE WINDOW
@@ -44,4 +44,5 @@ public abstract class TestBase {
         }
         driver.switchTo().window(origin);
     }
+
 }
