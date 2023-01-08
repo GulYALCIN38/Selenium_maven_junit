@@ -23,7 +23,9 @@ public class C04_Cookies extends TestBase {
         //1.toplam cookie sayisini bul
         Set<Cookie> allcookies=driver.manage().getCookies();
         int cookiesSayisi=allcookies.size();
-        System.out.println(allcookies.size());
+        System.out.println(allcookies.size());//8
+
+
 
 
         //3. Bir Cookie yi ismiyle bul
@@ -38,7 +40,7 @@ public class C04_Cookies extends TestBase {
         Cookie favoriCooki= new Cookie("cerez","fistik");
         driver.manage().addCookie(favoriCooki);
         waitFor(2);
-        System.out.println("toplam  cookie sayisi"+driver.manage().getCookies().size());
+        System.out.println("toplam  cookie sayisi"+driver.manage().getCookies().size());//9
 
 
         //5. Bir Cookie yi ismiyle sil
@@ -48,7 +50,7 @@ public class C04_Cookies extends TestBase {
         //6. Tum cookie leri sil
         driver.manage().deleteAllCookies();
         waitFor(3);
-        System.out.println("tum cookiler silinince toplam cookies sayisi="+driver.manage().getCookies().size());
+        System.out.println("tum cookiler silinince toplam cookies sayisi="+driver.manage().getCookies().size());//0\
 
 
     }
