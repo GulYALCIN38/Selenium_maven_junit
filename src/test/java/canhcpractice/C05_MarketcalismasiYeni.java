@@ -9,7 +9,7 @@ import utilities.TestBase;
 
 import java.util.List;
 
-public class C05_Marketcalismasi extends TestBase {
+public class C05_MarketcalismasiYeni extends TestBase {
     //Go to https://www.amazon.com.tr/
     //    //Search iPhone13 512
     //    //Check that the results are listed
@@ -39,15 +39,11 @@ public class C05_Marketcalismasi extends TestBase {
         //Log the following values for each size .Size information .Price .Color .Stock status
         waitFor(3);
 
-         sepeteEkle("3","2");
-        driver.findElement(By.id("attach-close_sideSheet-link")).click();
-        sepeteEkle("2","1");
-        driver.findElement(By.id("attach-close_sideSheet-link")).click();
-        sepeteEkle("2","0");
 
+        sepeteEkle();
 
         waitFor(1);
-        driver.findElement(By.id("attach-view-cart-button-form")).click();//alisveris sepetine tikla
+       // driver.findElement(By.id("attach-view-cart-button-form")).click();//alisveris sepetine tikla
 
         List<WebElement>w=driver.findElements(By.xpath("//span[@class='a-list-item']"));//konsolda gormek istedigimiz tum bilgileri bir list icine attik
         waitFor(1);
@@ -61,36 +57,34 @@ public class C05_Marketcalismasi extends TestBase {
 
 
         //Isim - Renk - Stok - Boyut - Fiyat =============ekran ciktisi
-        /*
-        Apple iPhone 13 (512 GB) - Pembe
-         Stokta var
-         Ölçü: 512 GB
-         Renk: Pembe
-         Fiyat
-         32.799,10 TL
-        Apple iPhone 13 (256 GB) - Mavi
-         Stokta sadece 6 adet kaldı.
-         Ölçü: 256 GB
-         Renk: Mavi
-         Fiyat
-         29.569,40 TL
-        Apple iPhone 13 (128 GB) - Mavi
-         Stokta var
-         Ölçü: 128 GB
-         Renk: Mavi
-         Fiyat
-         27.571,40 TL
-         */
+
 
     }
-    public void sepeteEkle(String a,String b){
-        driver.findElement(By.xpath("//input[@aria-labelledby='color_name_"+a+"-announce']")).click();//beyaz:5, yesil:4,pembe:3, mavi:2,kirmizi:1 siyah:0,
-        waitFor(2);
-        WebElement w1=driver.findElement(By.xpath("//*[@aria-labelledby='size_name_"+b+"-announce']"));//buradaki sayi kismina 256:1,128:0 veya 512 icin 2 secenekleri yazilabilir
-        w1.click();
-        waitFor(3);
-        driver.findElement(By.id("add-to-cart-button")).click();//sepete ekleyin
 
+    public void sepeteEkle(){
+        for (int i = 0; i < 6; i++) {
+            driver.findElement(By.xpath("//input[@aria-labelledby='color_name_"+i+"-announce']")).click();//beyaz:5, yesil:4,pembe:3, mavi:2,kirmizi:1 siyah:0,
+            waitFor(2);
+            for (int j = 0; j < 3; j++) {
+                WebElement w1=driver.findElement(By.xpath("//*[@aria-labelledby='size_name_"+j+"-announce']"));//buradaki sayi kismina 256:1,128:0 veya 512 icin 2 secenekleri yazilabilir
+                WebElement elemanYok=driver.findElement(By.xpath("(//span[text()='Mevcut seçenekleri görüntüleyin'])[1]"));
+               if(!elemanYok.isDisplayed()) {
+                w1.click();
+                }
+
+                waitFor(2);
+                driver.findElement(By.id("add-to-cart-button")).click();//sepete ekleyin
+                waitFor(2);
+                driver.findElement(By.id("attach-close_sideSheet-link")).click();//geri donmek icin x ya tika
+                waitFor(1);
+                driver.findElement(By.xpath("//input[@aria-labelledby='color_name_"+i+"-announce']")).click();//beyaz:5, yesil:4,pembe:3, mavi:2,kirmizi:1 siyah:0,
+                waitFor(2);
+
+            }
+
+        }
+
+driver.findElement(By.id("nav-cart-count")).click();
     }
 
 

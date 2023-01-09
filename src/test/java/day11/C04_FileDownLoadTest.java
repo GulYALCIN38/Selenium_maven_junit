@@ -19,13 +19,13 @@ public class C04_FileDownLoadTest extends TestBase {
     public void test01() {
 
         driver.get("https://testcenter.techproeducation.com/index.php?page=file-download ");
-   /*     driver.findElement(By.partialLinkText("b10 all test cases")).click();
+       driver.findElement(By.partialLinkText("b10 all test cases")).click();
 
         waitFor(3);
         String filePath=System.getProperty("user.home")+"/Downloads/b10 all test cases, code.docx";
         boolean telechargeoupas=Files.exists(Paths.get(filePath));
         System.out.println("telechargeoupas = " + telechargeoupas);
-        Assert.assertTrue(telechargeoupas);//true*/
+        Assert.assertTrue(telechargeoupas);//true
         
     }
 }
