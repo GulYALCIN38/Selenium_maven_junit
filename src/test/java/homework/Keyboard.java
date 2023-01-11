@@ -1,8 +1,10 @@
 package homework;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
@@ -21,6 +23,9 @@ public class Keyboard extends TestBase {
 
         driver.findElement(By.xpath("//*[@aria-label='Play']")).click();
         //videoyu calistirdiginizi test edin
+
+        WebElement pauseButton = driver.findElement(By.xpath("//button[@title='Pause (k)']"));
+        Assert.assertTrue(pauseButton.isEnabled());
 
     }
 }

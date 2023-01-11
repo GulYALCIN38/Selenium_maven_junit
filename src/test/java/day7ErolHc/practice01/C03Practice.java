@@ -1,4 +1,4 @@
-package day7ErolHc;
+package day7ErolHc.practice01;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
