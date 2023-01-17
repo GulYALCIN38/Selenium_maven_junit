@@ -74,11 +74,11 @@ public class webtables extends TestBase {
         //printData(2,3);  => 2nd row, 3rd column daki datayı print etsin
         driver.get("https://the-internet.herokuapp.com/tables");
         //2. satir 3. sutun verisini yazdir
-        printData("2","3");
+        printData(2,3);
 
     }
 
-    public void printData(String a, String b){
+    public void printData(int a, int b){
        String data=driver.findElement(By.xpath("//table[@id='table1']//tbody//tr["+a+"]//td["+b+"]")).getText();
         System.out.println("data = " + data);
 

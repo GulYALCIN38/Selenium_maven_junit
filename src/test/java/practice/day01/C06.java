@@ -11,8 +11,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class C06 {
+
     //1. Tarayıcıyı başlatın
     //2. 'http://automationexercise.com' URL'sine gidin
     //3. Ana sayfanın başarıyla göründüğünü doğrulayın
