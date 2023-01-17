@@ -16,7 +16,7 @@ public class Extendreport1 extends TestBase {
     // extend report ayri bir api dir selenyumun parcasi degildir. selenyumun disinda da kullanilabilir
     // extent report ta 3 class kullandik 1.ExtentReports sablon olustururr, 2.ExtentHtmlReporter sablonu generate
     // projeye ekler eder gosterir, 3.ExtentTest raporlama yapar ve loglari rapora yazdirir
-    // ropert dosyayi gormek icin ustune sag tikla --open in --Browser --CHROME
+    // report dosyayi gormek icin ustune sag tikla --open in --Browser --CHROME
     protected static ExtentReports extentReports;
     protected static ExtentHtmlReporter extentHtmlReporter;
     protected static ExtentTest extentTest;
@@ -64,7 +64,7 @@ public class Extendreport1 extends TestBase {
         //TEST BITTI
         extentTest.pass("TEST BASARI ILE GERCEKLESTI");
 
-        //RAPORU GOSTER. raporun olusmasi icin bu rapor zorunludur
+        //RAPORU GOSTER. raporun olusmasi icin bu flush komutu zorunludur
          extentReports.flush();
 
 

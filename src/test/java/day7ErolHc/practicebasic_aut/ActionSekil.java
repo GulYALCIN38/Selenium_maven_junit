@@ -17,16 +17,26 @@ public class ActionSekil extends TestBase {
     @Test
     public void test01() {
         driver.get("http://szimek.github.io/signature_pad/");
+
+       WebElement w= driver.findElement(By.xpath("//canvas"));
         Actions actions=new Actions(driver);
-       WebElement w= driver.findElement(By.xpath("//*[@ style='touch-action: none; user-select: none;']"));
-        actions.clickAndHold(w).moveToElement(w,120,0).release(w).perform();
-        actions.clickAndHold(w).moveToElement(w,0,120).release(w).perform();
-        actions.clickAndHold(w).moveToElement(w,-120,0).release(w).perform();
-        actions.clickAndHold(w).moveToElement(w,0,-120).release(w).perform();
-        actions.clickAndHold(w).moveToElement(w,120,120).release(w).perform();
-        actions.clickAndHold(w).moveToElement(w,-120,-120).release(w).perform();
-        actions.clickAndHold(w).moveToElement(w,-120,120).release(w).perform();
-        actions.clickAndHold(w).moveToElement(w,120,-120).release(w).perform();
+        actions.moveToElement(w).clickAndHold();
+        for (int i = 0; i < 10; i++) {
+            actions.moveByOffset(5,5);
+
+        }
+        for (int i = 0; i < 10; i++) {
+            actions.moveByOffset(0,5);
+
+        }
+        for (int i = 0; i < 10; i++) {
+            actions.moveByOffset(5,0);
+
+        }
+        actions.release().build().perform();
+        waitFor(3);
+        driver.findElement(By.xpath("//*[text()='Clear']")).click();
+
 
 
 
