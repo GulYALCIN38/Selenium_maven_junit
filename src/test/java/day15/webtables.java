@@ -1,5 +1,7 @@
 package day15;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,7 +21,7 @@ public class webtables extends TestBase {
     //Parameter 2 = column numarasi
     //printData(2,3);  => 2nd row, 3rd column daki datayı print etsin
 
-
+private static Logger logger= LogManager.getLogger(webtables.class.getName());
     @Test
     public void test01() {
         //https://the-internet.herokuapp.com/tables
@@ -29,6 +31,7 @@ public class webtables extends TestBase {
         //Task 1 : Table1’i print edin
         String table1=driver.findElement(By.xpath("//table[@id='table1']")).getText();
         System.out.println("table1 = " + table1);
+        logger.info("TABLE 1 VERILERI");//21:47:53.171 [main] INFO  day15.webtables - TABLE 1 VERILERI
         List<WebElement>tableElemanlari=driver.findElements(By.xpath("//table[@id='table1']//td"));
         tableElemanlari.forEach(t-> System.out.println(t.getText()));//foreach ile de alabilirsiniz
         System.out.println("-------------------------------------------------------------");
@@ -81,6 +84,7 @@ public class webtables extends TestBase {
     public void printData(int a, int b){
        String data=driver.findElement(By.xpath("//table[@id='table1']//tbody//tr["+a+"]//td["+b+"]")).getText();
         System.out.println("data = " + data);
+
 
 
     }
