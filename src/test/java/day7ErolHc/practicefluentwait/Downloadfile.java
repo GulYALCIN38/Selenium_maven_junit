@@ -48,13 +48,15 @@ public class Downloadfile extends TestBase {
 
         driver.findElement(By.linkText("chromedriver_win32.zip")).click();
         waitFor(3);
+        String s=System.getProperty("user.home");
+        s=s+"/Downloads/chromedriver_win32.zip";
 
         //Driver'in indiğini doğrulayalım
 
-        String dosyayolu="\"C:\\Users\\ASUS\\Downloads\\chromedriver_win32.zip\"";
+
 
         //String farkli=System.getProperty("user.home")+"\\Downloads\\chromedriver_win32.zip\"";
-        assert Files.exists(Paths.get(dosyayolu));
+        assert Files.exists(Paths.get(s));
 
 
     }
