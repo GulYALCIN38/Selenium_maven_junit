@@ -3,9 +3,7 @@ package day7ErolHc.practicefluentwait;
 import com.aventstack.extentreports.utils.FileUtil;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WindowType;
+import org.openqa.selenium.*;
 import utilities.TestBase;
 
 import java.io.File;
@@ -25,6 +23,7 @@ public class Screenchat extends TestBase {
     public void test01() throws IOException {
         //Amazon sayfasına gidelim
         driver.get("https://www.amazon.com/");
+        String amazon=driver.getWindowHandle();
 
         //Tüm sayfanın resmini alalım
         String date=new SimpleDateFormat("hh_mm_ss_ddMMyyy").format(new Date());
@@ -41,7 +40,13 @@ waitFor(3);
         FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File("target/tumsfresmi/tumSayfa"+date+".jpeg"));
 
         //Tekrar amazon sayfasına dönüp iphone aratalım
+        driver.switchTo().window(amazon);
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("iphone"+ Keys.ENTER);
+
 
         //Arama sonucunun resmini alalım
+        WebElement sonuc = driver.findElement(By.xpath("(//*[@class='a-section a-spacing-small a-spacing-top-small'])[1]"));
+        FileUtils.copyFile(sonuc.getScreenshotAs(OutputType.FILE),new File("target/WebElementScreenShot/WEScreenShot"+date+".jpeg"));
     }
-}
+    }
+
