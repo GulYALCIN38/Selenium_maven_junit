@@ -43,6 +43,7 @@ public abstract class TestBase {
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.http.factory","jdk-http-client");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -266,4 +267,9 @@ public abstract class TestBase {
        //             document.querySelector(".example").value; -> CSS DEGERI KULLANILABILIR
        //             document.querySelector("#example").value; -> CSS DEGERI KULLANILABILIR
     }
+   /*
+
+
+
+    */
 }

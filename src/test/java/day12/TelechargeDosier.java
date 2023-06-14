@@ -26,6 +26,7 @@ public class TelechargeDosier extends TestBase {
         //Upload butonuna basalim.
         driver.findElement(By.id("file-submit")).click();
 
+
         //“File Uploaded!” textinin goruntulendigini test edelim.
         String textUploaded=driver.findElement(By.xpath("//h3")).getText();
         Assert.assertEquals("File Uploaded!",textUploaded);

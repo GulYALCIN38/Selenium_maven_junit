@@ -30,13 +30,13 @@ private static Logger logger= LogManager.getLogger(webtables.class.getName());
         //Create a class: WebTables
         //Task 1 : Table1’i print edin
         String table1=driver.findElement(By.xpath("//table[@id='table1']")).getText();
-        System.out.println("table1 = " + table1);
+       // System.out.println("table1 = " + table1);
         logger.info("TABLE 1 VERILERI");//21:47:53.171 [main] INFO  day15.webtables - TABLE 1 VERILERI
         List<WebElement>tableElemanlari=driver.findElements(By.xpath("//table[@id='table1']//td"));
         tableElemanlari.forEach(t-> System.out.println(t.getText()));//foreach ile de alabilirsiniz
         System.out.println("-------------------------------------------------------------");
 
-        //Task 2 : 3. Row’ datalarını print edin
+       //Task 2 : 3. Row’ datalarını print edin
 
         List<WebElement>ucuncusatir=driver.findElements(By.xpath("//table[@id='table1']//tbody//tr[3]//td"));
         ucuncusatir.forEach(t-> System.out.println(t.getText()));

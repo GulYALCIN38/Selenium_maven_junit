@@ -23,6 +23,8 @@ public class C02_JavaFaker {
 
         System.out.println(faker.address().city());//fake ville
 
+        System.out.println(faker.lorem().paragraph());// sacma sapan bir metin bul
+
         System.out.println(faker.address().state());//fake state
 
         System.out.println(faker.address().fullAddress());//fake adresse
